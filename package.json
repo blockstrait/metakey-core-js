@@ -1,0 +1,39 @@
+{
+  "version": "0.1.0",
+  "name": "@blockstrait/metakey-core",
+  "author": "Pol Moreno Yeste",
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.js",
+  "keywords": [
+    "bsv",
+    "bitcoin sv"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blockstrait/metakey-core-js.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "npm run build:ts",
+    "build:ts": "tsc -b .",
+    "prebuild": "npm run clean",
+    "clean": "rimraf -rf dist coverage docs *.tsbuildinfo",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "pretty:check": "prettier --list-different \"**/*.{js,json,md,ts}\"",
+    "pretty:fix": "prettier --write \"**/*.{js,json,md,ts}\"",
+    "docs": "typedoc --out ./docs ./src/index.ts --excludeInternal"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.0",
+    "@typescript-eslint/parser": "^5.8.0",
+    "eslint-plugin-import": "^2.25.3",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "typedoc": "^0.22.10",
+    "typescript": "^4.5.4"
+  }
+}
